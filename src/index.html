@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en", data-ng-app="">
+<head>
+  <meta charset="utf-8">
+  <title>Registration Page</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<form name='RegistrationForm'>
+
+	<!--Input Information-->
+	Name:
+	<br />
+	<input type="text" data-ng-model="name" />
+	<br />
+	E-mail:
+	<br />
+	<input type="email" name="input" data-ng-model="email.text" required />
+	<h1 ng-if="!RegistrationForm.email.$valid">The input field cannot be empty</h1>
+	<br />
+	Password:
+	<br />
+	<input type="text" data-ng-model="Password" required />
+	<h1 ng-if="!RegistrationForm.Password.$valid">The input field cannot be empty</h1>
+	<br />
+	Phone Number:
+	<br />
+	<input type="number" data-ng-model="phonenumber" name="phonenumber" ng-pattern="/^[7-9][0-9]{9}$/" required />
+	<br />
+
+	<!--Buttons-->
+	<div >
+		<button type="button" class="btn btn-default" data-ng-click="redirect()">Register</button>
+	</div>
+
+	<!--Scripts-->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+	<script type="text/javascript">
+		$scope.redirect = function(){
+			window.location = "/test1.html";
+		}
+	}
+	</script>
+
+	
+
+	 
+
+
+
+</form>
+</html>
